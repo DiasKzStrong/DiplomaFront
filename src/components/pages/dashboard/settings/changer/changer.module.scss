@@ -1,0 +1,11 @@
+.button {
+
+    @apply w-full bg-transparent hover:bg-slate-500/50 border-black border text-black
+    
+}
+
+.selected {
+
+    @apply bg-blue-500 hover:bg-blue-500 transition-colors
+
+}

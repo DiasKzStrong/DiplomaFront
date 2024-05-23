@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  next-app:
+    container_name: egsu-front-app
+    build:
+     context: .
+     dockerfile: Dockerfile
+     args:
+       ENV_VARIABLE: ${ENV_VARIABLE}
+       NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
